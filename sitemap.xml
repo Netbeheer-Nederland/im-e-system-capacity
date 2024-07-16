@@ -6,12 +6,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/ActivePower/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/AngleDegrees/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Boolean/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/BusbarSection/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/ConductingEquipment/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Connector/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Curie/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/CurrentFlow/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -41,6 +71,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Equipment/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/FirmCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Float/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
@@ -62,6 +102,11 @@
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Jsonpointer/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/MaximumLoading/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -106,6 +151,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/PastYearConnectionActivity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/PowerSystemResource/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/ReactivePower/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/ShortCircuitFaultKind/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/ShortCircuitResult/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Sparqlpath/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
@@ -116,12 +186,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/SummaryShortCircuitResult/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/SystemCapacityProfile/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/Time/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/UnitMultiplier/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/UnitSymbol/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -141,7 +226,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/aggregate/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/aliasName/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/busBarSection/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -156,12 +251,162 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/energy_ident_code_eic/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/europeanArticleNumberEAN/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/european_article_number_ean/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/faultKind/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/firmCapacitySummer/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/firmCapacityWinter/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationBudgetEstimatesProvidedCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationBudgetEstimatesProvidedCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationConnectionOffersAcceptedCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationConnectionOffersAcceptedCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationConnectionOffersMadeCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/generationConnectionOffersMadeCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadBudgetEstimatesProvidedCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadBudgetEstimatesProvidedCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadConnectionOffersAcceptedCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadConnectionOffersAcceptedCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadConnectionOffersMadeCapacity/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/loadConnectionOffersMadeCount/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/mRID/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/m_rid/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/maxLoadingSummer/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/maxLoadingWinter/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/multiplier/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/normally_in_service/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/peakCurrent/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/qAtMaxLoadingSummer/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/qAtMaxLoadingWinter/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/short_name/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/symmetricalBreakingCurrent/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/symmetricalBreakingCurrentAngle/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/unit/</loc>
+         <lastmod>2024-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/im-e-system-capacity/value/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
