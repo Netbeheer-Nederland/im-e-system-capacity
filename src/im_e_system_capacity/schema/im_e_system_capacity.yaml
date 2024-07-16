@@ -1,4 +1,105 @@
 name: SystemCapacityProfile
+description: |-
+  The System Capacity profile defines the exchange of busbar section-related
+  information, short circuit results, system capacities, and loadings.
+
+  ```mermaid
+  classDiagram
+
+  class SummaryShortCircuitResult {
+      BusbarSection busBarSection
+      ShortCircuitFaultKind faultKind
+      CurrentFlow peakCurrent
+      CurrentFlow symmetricalBreakingCurrent
+      AngleDegrees symmetricalBreakingCurrentAngle
+      string aliasName
+      string description
+      string energyIdentCodeEic
+      string europeanArticleNumberEAN
+      string mRID
+      Name Names
+      string energy_ident_code_eic
+      string european_article_number_ean
+      string m_rid
+      string short_name
+  }
+  class FirmCapacity {
+      ActivePower firmCapacitySummer
+      ActivePower firmCapacityWinter
+      BusbarSection busBarSection
+      string aliasName
+      string description
+      string energyIdentCodeEic
+      string europeanArticleNumberEAN
+      string mRID
+      Name Names
+      string energy_ident_code_eic
+      string european_article_number_ean
+      string m_rid
+      string short_name
+  }
+  class MaximumLoading {
+      ActivePower maxLoadingSummer
+      ActivePower maxLoadingWinter
+      ReactivePower qAtMaxLoadingSummer
+      ReactivePower qAtMaxLoadingWinter
+      BusbarSection busBarSection
+      string aliasName
+      string description
+      string energyIdentCodeEic
+      string europeanArticleNumberEAN
+      string mRID
+      Name Names
+      string energy_ident_code_eic
+      string european_article_number_ean
+      string m_rid
+      string short_name
+  }
+  class PastYearConnectionActivity {
+      ActivePower generationBudgetEstimatesProvidedCapacity
+      integer generationBudgetEstimatesProvidedCount
+      ActivePower generationConnectionOffersAcceptedCapacity
+      integer generationConnectionOffersAcceptedCount
+      ActivePower generationConnectionOffersMadeCapacity
+      integer generationConnectionOffersMadeCount
+      ActivePower loadBudgetEstimatesProvidedCapacity
+      integer loadBudgetEstimatesProvidedCount
+      ActivePower loadConnectionOffersAcceptedCapacity
+      integer loadConnectionOffersAcceptedCount
+      ActivePower loadConnectionOffersMadeCapacity
+      integer loadConnectionOffersMadeCount
+      BusbarSection busBarSection
+      string aliasName
+      string description
+      string energyIdentCodeEic
+      string europeanArticleNumberEAN
+      string mRID
+      Name Names
+      string energy_ident_code_eic
+      string european_article_number_ean
+      string m_rid
+      string short_name
+  }
+  class BusbarSection {
+      boolean aggregate
+      boolean normally_in_service
+      string aliasName
+      string description
+      string energyIdentCodeEic
+      string europeanArticleNumberEAN
+      string mRID
+      Name Names
+      string energy_ident_code_eic
+      string european_article_number_ean
+      string m_rid
+      string short_name
+  }
+
+  SummaryShortCircuitResult --> BusbarSection : busBarSection
+  FirmCapacity --> BusbarSection : busBarSection
+  MaximumLoading --> BusbarSection : busBarSection
+  PastYearConnectionActivity --> BusbarSection : busBarSection
+  ```
 title: System Capacity Vocabulary
 id: http://data.netbeheernederland.nl/im-e-system-capacity/version#1.0.0
 imports:
@@ -7,14 +108,571 @@ prefixes:
   linkml: https://w3id.org/linkml/
   github: https://github.com/
   cim: https://cim.ucaiug.io/ns#
+  this: http://data.netbeheernederland.nl/im-e-system-capacity/def#
   eu: http://iec.ch/TC57/CIM100-European#
   nl: http://iec.ch/TC57/CIM100-Netherlands#
-  this: http://data.netbeheernederland.nl/im-e-system-capacity/def#
 default_curi_maps:
 - semweb_context
 default_prefix: this
 default_range: string
+enums:
+  ShortCircuitFaultKind:
+    enum_uri: this:ShortCircuitFaultKind
+    permissible_values:
+      singlePhase:
+        meaning: this:ShortCircuitFaultKind.singlePhase
+      threePhase:
+        meaning: this:ShortCircuitFaultKind.threePhase
+  UnitMultiplier:
+    from_schema: http://data.netbeheernederland.nl/im-e-equipment/version#1.0.0
+    enum_uri: http://iec.ch/TC57/CIM100#UnitMultiplier
+    permissible_values:
+      y:
+        meaning: cim:UnitMultiplier.y
+      z:
+        meaning: cim:UnitMultiplier.z
+      a:
+        meaning: cim:UnitMultiplier.a
+      f:
+        meaning: cim:UnitMultiplier.f
+      p:
+        meaning: cim:UnitMultiplier.p
+      n:
+        meaning: cim:UnitMultiplier.n
+      micro:
+        meaning: cim:UnitMultiplier.micro
+      m:
+        meaning: cim:UnitMultiplier.m
+      c:
+        meaning: cim:UnitMultiplier.c
+      d:
+        meaning: cim:UnitMultiplier.d
+      none:
+        meaning: cim:UnitMultiplier.none
+      da:
+        meaning: cim:UnitMultiplier.da
+      h:
+        meaning: cim:UnitMultiplier.h
+      k:
+        meaning: cim:UnitMultiplier.k
+      M:
+        meaning: cim:UnitMultiplier.M
+      G:
+        meaning: cim:UnitMultiplier.G
+      T:
+        meaning: cim:UnitMultiplier.T
+      P:
+        meaning: cim:UnitMultiplier.P
+      E:
+        meaning: cim:UnitMultiplier.E
+      Z:
+        meaning: cim:UnitMultiplier.Z
+      Y:
+        meaning: cim:UnitMultiplier.Y
+  UnitSymbol:
+    from_schema: http://data.netbeheernederland.nl/im-e-equipment/version#1.0.0
+    enum_uri: http://iec.ch/TC57/CIM100#UnitSymbol
+    permissible_values:
+      none:
+        meaning: cim:UnitSymbol.none
+      m:
+        meaning: cim:UnitSymbol.m
+      kg:
+        meaning: cim:UnitSymbol.kg
+      s:
+        meaning: cim:UnitSymbol.s
+      A:
+        meaning: cim:UnitSymbol.A
+      K:
+        meaning: cim:UnitSymbol.K
+      mol:
+        meaning: cim:UnitSymbol.mol
+      cd:
+        meaning: cim:UnitSymbol.cd
+      deg:
+        meaning: cim:UnitSymbol.deg
+      rad:
+        meaning: cim:UnitSymbol.rad
+      sr:
+        meaning: cim:UnitSymbol.sr
+      Gy:
+        meaning: cim:UnitSymbol.Gy
+      Bq:
+        meaning: cim:UnitSymbol.Bq
+      degC:
+        meaning: cim:UnitSymbol.degC
+      Sv:
+        meaning: cim:UnitSymbol.Sv
+      F:
+        meaning: cim:UnitSymbol.F
+      C:
+        meaning: cim:UnitSymbol.C
+      S:
+        meaning: cim:UnitSymbol.S
+      H:
+        meaning: cim:UnitSymbol.H
+      V:
+        meaning: cim:UnitSymbol.V
+      ohm:
+        meaning: cim:UnitSymbol.ohm
+      J:
+        meaning: cim:UnitSymbol.J
+      N:
+        meaning: cim:UnitSymbol.N
+      Hz:
+        meaning: cim:UnitSymbol.Hz
+      lx:
+        meaning: cim:UnitSymbol.lx
+      lm:
+        meaning: cim:UnitSymbol.lm
+      Wb:
+        meaning: cim:UnitSymbol.Wb
+      T:
+        meaning: cim:UnitSymbol.T
+      W:
+        meaning: cim:UnitSymbol.W
+      Pa:
+        meaning: cim:UnitSymbol.Pa
+      m2:
+        meaning: cim:UnitSymbol.m2
+      m3:
+        meaning: cim:UnitSymbol.m3
+      mPers:
+        meaning: cim:UnitSymbol.mPers
+      mPers2:
+        meaning: cim:UnitSymbol.mPers2
+      m3Pers:
+        meaning: cim:UnitSymbol.m3Pers
+      mPerm3:
+        meaning: cim:UnitSymbol.mPerm3
+      kgm:
+        meaning: cim:UnitSymbol.kgm
+      kgPerm3:
+        meaning: cim:UnitSymbol.kgPerm3
+      m2Pers:
+        meaning: cim:UnitSymbol.m2Pers
+      WPermK:
+        meaning: cim:UnitSymbol.WPermK
+      JPerK:
+        meaning: cim:UnitSymbol.JPerK
+      ppm:
+        meaning: cim:UnitSymbol.ppm
+      rotPers:
+        meaning: cim:UnitSymbol.rotPers
+      radPers:
+        meaning: cim:UnitSymbol.radPers
+      WPerm2:
+        meaning: cim:UnitSymbol.WPerm2
+      JPerm2:
+        meaning: cim:UnitSymbol.JPerm2
+      SPerm:
+        meaning: cim:UnitSymbol.SPerm
+      KPers:
+        meaning: cim:UnitSymbol.KPers
+      PaPers:
+        meaning: cim:UnitSymbol.PaPers
+      JPerkgK:
+        meaning: cim:UnitSymbol.JPerkgK
+      VA:
+        meaning: cim:UnitSymbol.VA
+      VAr:
+        meaning: cim:UnitSymbol.VAr
+      cosPhi:
+        meaning: cim:UnitSymbol.cosPhi
+      Vs:
+        meaning: cim:UnitSymbol.Vs
+      V2:
+        meaning: cim:UnitSymbol.V2
+      As:
+        meaning: cim:UnitSymbol.As
+      A2:
+        meaning: cim:UnitSymbol.A2
+      A2s:
+        meaning: cim:UnitSymbol.A2s
+      VAh:
+        meaning: cim:UnitSymbol.VAh
+      Wh:
+        meaning: cim:UnitSymbol.Wh
+      VArh:
+        meaning: cim:UnitSymbol.VArh
+      VPerHz:
+        meaning: cim:UnitSymbol.VPerHz
+      HzPers:
+        meaning: cim:UnitSymbol.HzPers
+      character:
+        meaning: cim:UnitSymbol.character
+      charPers:
+        meaning: cim:UnitSymbol.charPers
+      kgm2:
+        meaning: cim:UnitSymbol.kgm2
+      dB:
+        meaning: cim:UnitSymbol.dB
+      WPers:
+        meaning: cim:UnitSymbol.WPers
+      lPers:
+        meaning: cim:UnitSymbol.lPers
+      dBm:
+        meaning: cim:UnitSymbol.dBm
+      h:
+        meaning: cim:UnitSymbol.h
+      min:
+        meaning: cim:UnitSymbol.min
+      Q:
+        meaning: cim:UnitSymbol.Q
+      Qh:
+        meaning: cim:UnitSymbol.Qh
+      ohmm:
+        meaning: cim:UnitSymbol.ohmm
+      APerm:
+        meaning: cim:UnitSymbol.APerm
+      V2h:
+        meaning: cim:UnitSymbol.V2h
+      A2h:
+        meaning: cim:UnitSymbol.A2h
+      Ah:
+        meaning: cim:UnitSymbol.Ah
+      count:
+        meaning: cim:UnitSymbol.count
+      ft3:
+        meaning: cim:UnitSymbol.ft3
+      m3Perh:
+        meaning: cim:UnitSymbol.m3Perh
+      gal:
+        meaning: cim:UnitSymbol.gal
+      Btu:
+        meaning: cim:UnitSymbol.Btu
+      l:
+        meaning: cim:UnitSymbol.l
+      lPerh:
+        meaning: cim:UnitSymbol.lPerh
+      lPerl:
+        meaning: cim:UnitSymbol.lPerl
+      gPerg:
+        meaning: cim:UnitSymbol.gPerg
+      molPerm3:
+        meaning: cim:UnitSymbol.molPerm3
+      molPermol:
+        meaning: cim:UnitSymbol.molPermol
+      molPerkg:
+        meaning: cim:UnitSymbol.molPerkg
+      sPers:
+        meaning: cim:UnitSymbol.sPers
+      HzPerHz:
+        meaning: cim:UnitSymbol.HzPerHz
+      VPerV:
+        meaning: cim:UnitSymbol.VPerV
+      APerA:
+        meaning: cim:UnitSymbol.APerA
+      VPerVA:
+        meaning: cim:UnitSymbol.VPerVA
+      rev:
+        meaning: cim:UnitSymbol.rev
+      kat:
+        meaning: cim:UnitSymbol.kat
+      JPerkg:
+        meaning: cim:UnitSymbol.JPerkg
+      m3Uncompensated:
+        meaning: cim:UnitSymbol.m3Uncompensated
+      m3Compensated:
+        meaning: cim:UnitSymbol.m3Compensated
+      WPerW:
+        meaning: cim:UnitSymbol.WPerW
+      therm:
+        meaning: cim:UnitSymbol.therm
+      onePerm:
+        meaning: cim:UnitSymbol.onePerm
+      m3Perkg:
+        meaning: cim:UnitSymbol.m3Perkg
+      Pas:
+        meaning: cim:UnitSymbol.Pas
+      Nm:
+        meaning: cim:UnitSymbol.Nm
+      NPerm:
+        meaning: cim:UnitSymbol.NPerm
+      radPers2:
+        meaning: cim:UnitSymbol.radPers2
+      JPerm3:
+        meaning: cim:UnitSymbol.JPerm3
+      VPerm:
+        meaning: cim:UnitSymbol.VPerm
+      CPerm3:
+        meaning: cim:UnitSymbol.CPerm3
+      CPerm2:
+        meaning: cim:UnitSymbol.CPerm2
+      FPerm:
+        meaning: cim:UnitSymbol.FPerm
+      HPerm:
+        meaning: cim:UnitSymbol.HPerm
+      JPermol:
+        meaning: cim:UnitSymbol.JPermol
+      JPermolK:
+        meaning: cim:UnitSymbol.JPermolK
+      CPerkg:
+        meaning: cim:UnitSymbol.CPerkg
+      GyPers:
+        meaning: cim:UnitSymbol.GyPers
+      WPersr:
+        meaning: cim:UnitSymbol.WPersr
+      WPerm2sr:
+        meaning: cim:UnitSymbol.WPerm2sr
+      katPerm3:
+        meaning: cim:UnitSymbol.katPerm3
+      d:
+        meaning: cim:UnitSymbol.d
+      anglemin:
+        meaning: cim:UnitSymbol.anglemin
+      anglesec:
+        meaning: cim:UnitSymbol.anglesec
+      ha:
+        meaning: cim:UnitSymbol.ha
+      tonne:
+        meaning: cim:UnitSymbol.tonne
+      bar:
+        meaning: cim:UnitSymbol.bar
+      mmHg:
+        meaning: cim:UnitSymbol.mmHg
+      M:
+        meaning: cim:UnitSymbol.M
+      kn:
+        meaning: cim:UnitSymbol.kn
+      Mx:
+        meaning: cim:UnitSymbol.Mx
+      G:
+        meaning: cim:UnitSymbol.G
+      Oe:
+        meaning: cim:UnitSymbol.Oe
+      Vh:
+        meaning: cim:UnitSymbol.Vh
+      WPerA:
+        meaning: cim:UnitSymbol.WPerA
+      onePerHz:
+        meaning: cim:UnitSymbol.onePerHz
+      VPerVAr:
+        meaning: cim:UnitSymbol.VPerVAr
+      ohmPerm:
+        meaning: cim:UnitSymbol.ohmPerm
+      kgPerJ:
+        meaning: cim:UnitSymbol.kgPerJ
+      JPers:
+        meaning: cim:UnitSymbol.JPers
 classes:
+  SummaryShortCircuitResult:
+    description: Short circuit result obtained from multiple short circuit calculations using different power system states.
+    is_a: ShortCircuitResult
+    attributes:
+      busBarSection:
+        description: A conductor, or group of conductors, with negligible impedance.
+        slot_uri: this.SummaryShortCircuitResult.busBarSection
+        multivalued: false
+        range: BusbarSection
+        required: true
+    class_uri: this:SummaryShortCircuitResult
+  ShortCircuitResult:
+    description: Used to report on result of a short circuit calculation or an outcome of multiple calculations.
+    is_a: IdentifiedObject
+    attributes:
+      faultKind:
+        description:
+        slot_uri: this:SummaryShortCircuitResult.faultKind
+        multivalued: false
+        range: ShortCircuitFaultKind
+        required: true
+      peakCurrent:
+        description: Peak short-circuit current. It is the maximum possible
+          instantaneous value of prospective (available) short-circuit current.
+          It is ip according to IEC 60909-0.
+        slot_uri: this:SummaryShortCircuitResult.peakCurrent
+        multivalued: false
+        range: CurrentFlow
+        required: true
+      symmetricalBreakingCurrent:
+        description: Symmetrical short-circuit breaking current. It is a root
+          mean square value of an integral cycle of the symmetrical alternate
+          current component of the prospective short-circuit current at the
+          instant of contact separation of the first pole to open of a
+          switching device. It is Ib according to IEC 60909-0.
+        slot_uri: this:SummaryShortCircuitResult.symmetricalBreakingCurrent
+        multivalued: false
+        range: CurrentFlow
+        required: true
+      symmetricalBreakingCurrentAngle:
+        description: Symmetrical short-circuit breaking current angle. It is
+          the angle of a root mean square value of an integral cycle of the
+          symmetrical alternate current component of the prospective
+          short-circuit current at the instant of contact separation of the
+          first pole to open of a switching device.
+        slot_uri: this:SummaryShortCircuitResult.symmetricalBreakingCurrentAngle
+        multivalued: false
+        range: AngleDegrees
+        required: true
+      busBarSection:
+        description: A conductor, or group of conductors, with negligible impedance.
+        slot_uri: this.SummaryShortCircuitResult.busBarSection
+        multivalued: false
+        range: BusbarSection
+        required: true
+    class_uri: this:ShortCircuitResult
+  FirmCapacity:
+    description: Seasonal busbar section firm capacity information.
+    is_a: IdentifiedObject
+    attributes:
+      firmCapacitySummer:
+        description: Summer firm capacity.
+        slot_uri: this:FirmCapacity.firmCapacitySummer
+        multivalued: false
+        range: ActivePower
+        required: true
+      firmCapacityWinter:
+        description: Winter firm capacity.
+        slot_uri: this:FirmCapacity.firmCapacityWinter
+        multivalued: false
+        range: ActivePower
+        required: true
+      busBarSection:
+        description: A conductor, or group of conductors, with negligible impedance.
+        slot_uri: this.SummaryShortCircuitResult.busBarSection
+        multivalued: false
+        range: BusbarSection
+        required: true
+    class_uri: this:FirmCapacity
+  MaximumLoading:
+    description: Information on maximum busbar section loading during summer
+      and winter periods. Information may be historic or forecast.
+    is_a: IdentifiedObject
+    attributes:
+      maxLoadingSummer:
+        description: Summer active power maximum loading.
+        slot_uri: this:MaximumLoading.maxLoadingSummer
+        multivalued: false
+        range: ActivePower
+        required: true
+      maxLoadingWinter:
+        description: Winter active power maximum loading.
+        slot_uri: this:MaximumLoading.maxLoadingWinter
+        multivalued: false
+        range: ActivePower
+        required: true
+      qAtMaxLoadingSummer:
+        description: Reactive power at time of summer active power maximum loading.
+        slot_uri: this:MaximumLoading.qAtMaxLoadingSummer
+        multivalued: false
+        range: ReactivePower
+        required: true
+      qAtMaxLoadingWinter:
+        description: Reactive power at time of winter active power maximum loading.
+        slot_uri: this:MaximumLoading.qAtMaxLoadingWinter
+        multivalued: false
+        range: ReactivePower
+        required: true
+      busBarSection:
+        description: A conductor, or group of conductors, with negligible impedance.
+        slot_uri: this.SummaryShortCircuitResult.busBarSection
+        multivalued: false
+        range: BusbarSection
+        required: true
+    class_uri: this:MaximumLoading
+  PastYearConnectionActivity:
+    description: A summary of load and generation connection activity over the
+      last year related to a given busbar group. Counts and capacities of
+      proposed connections, aggregated at the busbar group level, are provided
+      for the following activities. Budget estimates provided, connections
+      offered and connection offers accepted.
+    is_a: IdentifiedObject
+    attributes:
+      generationBudgetEstimatesProvidedCapacity:
+        description: Total active power capacity of connection requests counted
+          by generationBudgetEstimatesProvidedCount.
+        slot_uri: this:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      generationBudgetEstimatesProvidedCount:
+        description: Count of generation connection requests associated with a
+          busbar group for which budget estimates were provided in the last
+          year.
+        slot_uri: this:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount
+        multivalued: false
+        range: integer
+        required: true
+      generationConnectionOffersAcceptedCapacity:
+        description: Total active power capacity of connection requests counted
+          by generationConnectionOffersAcceptedCount.
+        slot_uri: this:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      generationConnectionOffersAcceptedCount:
+        description: Count of generation connection requests associated with a
+          busbar group for which connection offers were accepted in the last
+          year.
+        slot_uri: this:PastYearConnectionActivity.generationConnectionOffersAcceptedCount
+        multivalued: false
+        range: integer
+        required: true
+      generationConnectionOffersMadeCapacity:
+        description: Total active power capacity of connection requests counted
+          by generationConnectionOffersMadeCount.
+        slot_uri: this:PastYearConnectionActivity.generationConnectionOffersMadeCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      generationConnectionOffersMadeCount:
+        description: Count of generation connection requests associated with a
+          busbar group for which connection offers were made in the last year.
+        slot_uri: this:PastYearConnectionActivity.generationConnectionOffersMadeCount
+        multivalued: false
+        range: integer
+        required: true
+      loadBudgetEstimatesProvidedCapacity:
+        description: Total active power capacity of connection requests counted
+          by loadBudgetEstimatesProvidedCount.
+        slot_uri: this:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      loadBudgetEstimatesProvidedCount:
+        description: Count of load connection requests associated with a busbar
+          group for which budget estimates were provided in the last year.
+        slot_uri: this:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount
+        multivalued: false
+        range: integer
+        required: true
+      loadConnectionOffersAcceptedCapacity:
+        description: Total active power capacity of connection requests counted
+          by loadConnectionOffersAcceptedCount.
+        slot_uri: this:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      loadConnectionOffersAcceptedCount:
+        description: Count of load connection requests associated with the
+          busbar group for which connection offers were accepted in the last
+          year.
+        slot_uri: this:PastYearConnectionActivity.loadConnectionOffersAcceptedCount
+        multivalued: false
+        range: integer
+        required: true
+      loadConnectionOffersMadeCapacity:
+        description: Total active power capacity of connection requests counted
+          by loadConnectionOffersMadeCount.
+        slot_uri: this:PastYearConnectionActivity.loadConnectionOffersMadeCapacity
+        multivalued: false
+        range: ActivePower
+        required: true
+      loadConnectionOffersMadeCount:
+        description: Count of load connection requests associated with a busbar
+          group for which connection offers were made in the last year.
+        slot_uri: this:PastYearConnectionActivity.loadConnectionOffersMadeCount
+        multivalued: false
+        range: integer
+        required: true
+      busBarSection:
+        description: A conductor, or group of conductors, with negligible impedance.
+        slot_uri: this.SummaryShortCircuitResult.busBarSection
+        multivalued: false
+        range: BusbarSection
+        required: true
+    class_uri: this:PastYearConnectionActivity
   IdentifiedObject:
     description: This is a root class to provide common identification for all classes
       needing identification and naming attributes.
@@ -47,11 +705,10 @@ classes:
         range: string
         required: false
       europeanArticleNumberEAN:
-        description: The attribute is used for an exchange of the EAN code
-          (European Article Number). The length of the string is 16 characters
-          as defined by the EAN code. For details on EAN scheme please refer to
-          the [Codebesluit toekenning EAN-codes
-          elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
+        description: The attribute is used for an exchange of the EAN code (European
+          Article Number). The length of the string is 16 characters as defined by
+          the EAN code. For details on EAN scheme please refer to the [Codebesluit
+          toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
         slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
         multivalued: false
         range: string
@@ -72,6 +729,41 @@ classes:
         slot_uri: cim:IdentifiedObject.Names
         multivalued: true
         range: Name
+        required: false
+      energy_ident_code_eic:
+        description: The attribute is used for an exchange of the EIC code (Energy
+          identification Code). The length of the string is 16 characters as defined
+          by the EIC code. For details on EIC scheme please refer to ENTSO-E web site.
+        slot_uri: eu:IdentifiedObject.energyIdentCodeEic
+        multivalued: false
+        range: string
+        required: false
+      european_article_number_ean:
+        description: The attribute is used for an exchange of the EAN code (European
+          Article Number). The length of the string is 16 characters as defined by
+          the EAN code. For details on EAN scheme please refer to the [Codebesluit
+          toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
+        slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
+        multivalued: false
+        range: string
+        required: false
+      m_rid:
+        description: 'Master resource identifier issued by a model authority. The
+          mRID is unique within an exchange context. Global uniqueness is easily achieved
+          by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID
+          is strongly recommended.
+          For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID
+          is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.'
+        slot_uri: cim:IdentifiedObject.mRID
+        multivalued: false
+        range: string
+        required: true
+      short_name:
+        description: The attribute is used for an exchange of a human readable short
+          name with length of the string 12 characters maximum.
+        slot_uri: eu:IdentifiedObject.shortName
+        multivalued: false
+        range: string
         required: false
     class_uri: cim:IdentifiedObject
   Name:
@@ -145,3 +837,141 @@ classes:
         range: NameType
         required: false
     class_uri: cim:NameTypeAuthority
+  BusbarSection:
+    description: "A conductor, or group of conductors, with negligible impedance,\
+      \ that serve to connect other conducting equipment within a single substation.\
+      \ \nVoltage measurements are typically obtained from voltage transformers that\
+      \ are connected to busbar sections. A bus bar section may have many physical\
+      \ terminals but for analysis is modelled with exactly one logical terminal."
+    is_a: Connector
+    class_uri: cim:BusbarSection
+  Connector:
+    description: A conductor, or group of conductors, with negligible impedance, that
+      serve to connect other conducting equipment within a single substation and are
+      modelled with a single logical terminal.
+    is_a: ConductingEquipment
+    class_uri: cim:Connector
+  ConductingEquipment:
+    description: The parts of the AC power system that are designed to carry current
+      or that are conductively connected through terminals.
+    is_a: Equipment
+    class_uri: cim:ConductingEquipment
+  Equipment:
+    description: The parts of a power system that are physical devices, electronic
+      or mechanical.
+    is_a: PowerSystemResource
+    attributes:
+      aggregate:
+        description: "The aggregate flag provides an alternative way of representing\
+          \ an aggregated (equivalent) element. It is applicable in cases when the\
+          \ dedicated classes for equivalent equipment do not have all of the attributes\
+          \ necessary to represent the required level of detail.  In case the flag\
+          \ is set to \u201Ctrue\u201D the single instance of equipment represents\
+          \ multiple pieces of equipment that have been modelled together as an aggregate\
+          \ equivalent obtained by a network reduction procedure. Examples would be\
+          \ power transformers or synchronous machines operating in parallel modelled\
+          \ as a single aggregate power transformer or aggregate synchronous machine.\
+          \  \nThe attribute is not used for EquivalentBranch, EquivalentShunt and\
+          \ EquivalentInjection."
+        slot_uri: cim:Equipment.aggregate
+        multivalued: false
+        range: boolean
+        required: false
+      normally_in_service:
+        description: Specifies the availability of the equipment under normal operating
+          conditions. True means the equipment is available for topology processing,
+          which determines if the equipment is energized or not. False means that
+          the equipment is treated by network applications as if it is not in the
+          model.
+        slot_uri: cim:Equipment.normallyInService
+        multivalued: false
+        range: boolean
+        required: false
+    class_uri: cim:Equipment
+  PowerSystemResource:
+    description: A power system resource (PSR) can be an item of equipment such as
+      a switch, an equipment container containing many individual items of equipment
+      such as a substation, or an organisational entity such as sub-control area.
+      Power system resources can have measurements associated.
+    is_a: IdentifiedObject
+    class_uri: cim:PowerSystemResource
+  ActivePower:
+    description: Product of RMS value of the voltage and the RMS value of the in-phase
+      component of the current.
+    attributes:
+      value:
+        slot_uri: cim:ActivePower.value
+        multivalued: false
+        range: float
+        required: false
+      multiplier:
+        slot_uri: cim:ActivePower.multiplier
+        multivalued: false
+        range: UnitMultiplier
+        required: false
+      unit:
+        slot_uri: cim:ActivePower.unit
+        multivalued: false
+        range: UnitSymbol
+        required: false
+    class_uri: cim:ActivePower
+  ReactivePower:
+    description: Product of RMS value of the voltage and the RMS value of the quadrature
+      component of the current.
+    attributes:
+      value:
+        slot_uri: cim:ReactivePower.value
+        multivalued: false
+        range: float
+        required: false
+      unit:
+        slot_uri: cim:ReactivePower.unit
+        multivalued: false
+        range: UnitSymbol
+        required: false
+      multiplier:
+        slot_uri: cim:ReactivePower.multiplier
+        multivalued: false
+        range: UnitMultiplier
+        required: false
+    class_uri: cim:ReactivePower
+  AngleDegrees:
+    description: Measurement of angle in degrees.
+    attributes:
+      value:
+        slot_uri: cim:AngleDegrees.value
+        multivalued: false
+        range: float
+        required: false
+      unit:
+        slot_uri: cim:AngleDegrees.unit
+        multivalued: false
+        range: UnitSymbol
+        required: false
+      multiplier:
+        slot_uri: cim:AngleDegrees.multiplier
+        multivalued: false
+        range: UnitMultiplier
+        required: false
+    class_uri: cim:AngleDegrees
+  CurrentFlow:
+    description: 'Electrical current with sign convention: positive flow is out of
+      the conducting equipment into the connectivity node. Can be both AC and DC.'
+    attributes:
+      value:
+        slot_uri: cim:CurrentFlow.value
+        multivalued: false
+        range: float
+        required: false
+      multiplier:
+        slot_uri: cim:CurrentFlow.multiplier
+        multivalued: false
+        range: UnitMultiplier
+        required: false
+      unit:
+        slot_uri: cim:CurrentFlow.unit
+        multivalued: false
+        range: UnitSymbol
+        required: false
+    class_uri: cim:CurrentFlow
+
