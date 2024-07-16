@@ -222,98 +222,78 @@ information, short circuit results, system capacities, and loadings.</p>
 <pre class="mermaid"><code>classDiagram
 
 class SummaryShortCircuitResult {
-    BusbarSection busBarSection
-    ShortCircuitFaultKind faultKind
-    CurrentFlow peakCurrent
-    CurrentFlow symmetricalBreakingCurrent
-    AngleDegrees symmetricalBreakingCurrentAngle
-    string aliasName
+    BusbarSection bus_bar_section
+    ShortCircuitFaultKind fault_kind
+    CurrentFlow peak_current
+    CurrentFlow symmetrical_breaking_current
+    AngleDegrees symmetrical_breaking_current_angle
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class FirmCapacity {
-    ActivePower firmCapacitySummer
-    ActivePower firmCapacityWinter
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower firm_capacity_summer
+    ActivePower firm_capacity_winter
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class MaximumLoading {
-    ActivePower maxLoadingSummer
-    ActivePower maxLoadingWinter
-    ReactivePower qAtMaxLoadingSummer
-    ReactivePower qAtMaxLoadingWinter
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower max_loading_summer
+    ActivePower max_loading_winter
+    ReactivePower q_at_max_loading_summer
+    ReactivePower q_at_max_loading_winter
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class PastYearConnectionActivity {
-    ActivePower generationBudgetEstimatesProvidedCapacity
-    integer generationBudgetEstimatesProvidedCount
-    ActivePower generationConnectionOffersAcceptedCapacity
-    integer generationConnectionOffersAcceptedCount
-    ActivePower generationConnectionOffersMadeCapacity
-    integer generationConnectionOffersMadeCount
-    ActivePower loadBudgetEstimatesProvidedCapacity
-    integer loadBudgetEstimatesProvidedCount
-    ActivePower loadConnectionOffersAcceptedCapacity
-    integer loadConnectionOffersAcceptedCount
-    ActivePower loadConnectionOffersMadeCapacity
-    integer loadConnectionOffersMadeCount
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower generation_budget_estimates_provided_capacity
+    integer generation_budget_estimates_provided_count
+    ActivePower generation_connection_offers_accepted_capacity
+    integer generation_connection_offers_accepted_count
+    ActivePower generation_connection_offers_made_capacity
+    integer generation_connection_offers_made_count
+    ActivePower load_budget_estimates_provided_capacity
+    integer load_budget_estimates_provided_count
+    ActivePower load_connection_offers_accepted_capacity
+    integer load_connection_offers_accepted_count
+    ActivePower load_connection_offers_made_capacity
+    integer load_connection_offers_made_count
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class BusbarSection {
     boolean aggregate
     boolean normally_in_service
-    string aliasName
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 
-SummaryShortCircuitResult --&gt; BusbarSection : busBarSection
-FirmCapacity --&gt; BusbarSection : busBarSection
-MaximumLoading --&gt; BusbarSection : busBarSection
-PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
+SummaryShortCircuitResult --&gt; BusbarSection : bus_bar_section
+FirmCapacity --&gt; BusbarSection : bus_bar_section
+MaximumLoading --&gt; BusbarSection : bus_bar_section
+PastYearConnectionActivity --&gt; BusbarSection : bus_bar_section</code></pre>
 <p>URI: http://data.netbeheernederland.nl/im-e-system-capacity/version#1.0.0</p>
 <p>Name: SystemCapacityProfile</p>
 <h2 id="classes">Classes</h2>
@@ -413,11 +393,7 @@ PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
 <td>The aggregate flag provides an alternative way of representing an aggregated ...</td>
 </tr>
 <tr>
-<td><a href="aliasName/">aliasName</a></td>
-<td>The aliasName is free text human readable name of the object alternative to I...</td>
-</tr>
-<tr>
-<td><a href="busBarSection/">busBarSection</a></td>
+<td><a href="bus_bar_section/">bus_bar_section</a></td>
 <td>A conductor, or group of conductors, with negligible impedance</td>
 </tr>
 <tr>
@@ -429,79 +405,71 @@ PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
 <td>The attribute is used for an exchange of the EIC code (Energy identification ...</td>
 </tr>
 <tr>
-<td><a href="energyIdentCodeEic/">energyIdentCodeEic</a></td>
-<td>The attribute is used for an exchange of the EIC code (Energy identification ...</td>
-</tr>
-<tr>
 <td><a href="european_article_number_ean/">european_article_number_ean</a></td>
 <td>The attribute is used for an exchange of the EAN code (European Article Numbe...</td>
 </tr>
 <tr>
-<td><a href="europeanArticleNumberEAN/">europeanArticleNumberEAN</a></td>
-<td>The attribute is used for an exchange of the EAN code (European Article Numbe...</td>
-</tr>
-<tr>
-<td><a href="faultKind/">faultKind</a></td>
+<td><a href="fault_kind/">fault_kind</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="firmCapacitySummer/">firmCapacitySummer</a></td>
+<td><a href="firm_capacity_summer/">firm_capacity_summer</a></td>
 <td>Summer firm capacity</td>
 </tr>
 <tr>
-<td><a href="firmCapacityWinter/">firmCapacityWinter</a></td>
+<td><a href="firm_capacity_winter/">firm_capacity_winter</a></td>
 <td>Winter firm capacity</td>
 </tr>
 <tr>
-<td><a href="generationBudgetEstimatesProvidedCapacity/">generationBudgetEstimatesProvidedCapacity</a></td>
+<td><a href="generation_budget_estimates_provided_capacity/">generation_budget_estimates_provided_capacity</a></td>
 <td>Total active power capacity of connection requests counted by generationBudge...</td>
 </tr>
 <tr>
-<td><a href="generationBudgetEstimatesProvidedCount/">generationBudgetEstimatesProvidedCount</a></td>
+<td><a href="generation_budget_estimates_provided_count/">generation_budget_estimates_provided_count</a></td>
 <td>Count of generation connection requests associated with a busbar group for wh...</td>
 </tr>
 <tr>
-<td><a href="generationConnectionOffersAcceptedCapacity/">generationConnectionOffersAcceptedCapacity</a></td>
+<td><a href="generation_connection_offers_accepted_capacity/">generation_connection_offers_accepted_capacity</a></td>
 <td>Total active power capacity of connection requests counted by generationConne...</td>
 </tr>
 <tr>
-<td><a href="generationConnectionOffersAcceptedCount/">generationConnectionOffersAcceptedCount</a></td>
+<td><a href="generation_connection_offers_accepted_count/">generation_connection_offers_accepted_count</a></td>
 <td>Count of generation connection requests associated with a busbar group for wh...</td>
 </tr>
 <tr>
-<td><a href="generationConnectionOffersMadeCapacity/">generationConnectionOffersMadeCapacity</a></td>
+<td><a href="generation_connection_offers_made_capacity/">generation_connection_offers_made_capacity</a></td>
 <td>Total active power capacity of connection requests counted by generationConne...</td>
 </tr>
 <tr>
-<td><a href="generationConnectionOffersMadeCount/">generationConnectionOffersMadeCount</a></td>
+<td><a href="generation_connection_offers_made_count/">generation_connection_offers_made_count</a></td>
 <td>Count of generation connection requests associated with a busbar group for wh...</td>
 </tr>
 <tr>
-<td><a href="IdentifiedObject/">IdentifiedObject</a></td>
+<td><a href="identified_object/">identified_object</a></td>
 <td>Identified object that this name designates</td>
 </tr>
 <tr>
-<td><a href="loadBudgetEstimatesProvidedCapacity/">loadBudgetEstimatesProvidedCapacity</a></td>
+<td><a href="load_budget_estimates_provided_capacity/">load_budget_estimates_provided_capacity</a></td>
 <td>Total active power capacity of connection requests counted by loadBudgetEstim...</td>
 </tr>
 <tr>
-<td><a href="loadBudgetEstimatesProvidedCount/">loadBudgetEstimatesProvidedCount</a></td>
+<td><a href="load_budget_estimates_provided_count/">load_budget_estimates_provided_count</a></td>
 <td>Count of load connection requests associated with a busbar group for which bu...</td>
 </tr>
 <tr>
-<td><a href="loadConnectionOffersAcceptedCapacity/">loadConnectionOffersAcceptedCapacity</a></td>
+<td><a href="load_connection_offers_accepted_capacity/">load_connection_offers_accepted_capacity</a></td>
 <td>Total active power capacity of connection requests counted by loadConnectionO...</td>
 </tr>
 <tr>
-<td><a href="loadConnectionOffersAcceptedCount/">loadConnectionOffersAcceptedCount</a></td>
+<td><a href="load_connection_offers_accepted_count/">load_connection_offers_accepted_count</a></td>
 <td>Count of load connection requests associated with the busbar group for which ...</td>
 </tr>
 <tr>
-<td><a href="loadConnectionOffersMadeCapacity/">loadConnectionOffersMadeCapacity</a></td>
+<td><a href="load_connection_offers_made_capacity/">load_connection_offers_made_capacity</a></td>
 <td>Total active power capacity of connection requests counted by loadConnectionO...</td>
 </tr>
 <tr>
-<td><a href="loadConnectionOffersMadeCount/">loadConnectionOffersMadeCount</a></td>
+<td><a href="load_connection_offers_made_count/">load_connection_offers_made_count</a></td>
 <td>Count of load connection requests associated with a busbar group for which co...</td>
 </tr>
 <tr>
@@ -509,51 +477,47 @@ PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
 <td>Master resource identifier issued by a model authority</td>
 </tr>
 <tr>
-<td><a href="maxLoadingSummer/">maxLoadingSummer</a></td>
+<td><a href="max_loading_summer/">max_loading_summer</a></td>
 <td>Summer active power maximum loading</td>
 </tr>
 <tr>
-<td><a href="maxLoadingWinter/">maxLoadingWinter</a></td>
+<td><a href="max_loading_winter/">max_loading_winter</a></td>
 <td>Winter active power maximum loading</td>
-</tr>
-<tr>
-<td><a href="mRID/">mRID</a></td>
-<td>Master resource identifier issued by a model authority</td>
 </tr>
 <tr>
 <td><a href="multiplier/">multiplier</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="Names/">Names</a></td>
-<td>All names of this identified object</td>
-</tr>
-<tr>
-<td><a href="NameType/">NameType</a></td>
+<td><a href="name_type/">name_type</a></td>
 <td>Type of this name</td>
 </tr>
 <tr>
-<td><a href="NameTypeAuthority/">NameTypeAuthority</a></td>
+<td><a href="name_type_authority/">name_type_authority</a></td>
 <td>Authority responsible for managing names of this type</td>
 </tr>
 <tr>
-<td><a href="NameTypes/">NameTypes</a></td>
+<td><a href="name_types/">name_types</a></td>
 <td>All name types managed by this authority</td>
+</tr>
+<tr>
+<td><a href="names/">names</a></td>
+<td>All names of this identified object</td>
 </tr>
 <tr>
 <td><a href="normally_in_service/">normally_in_service</a></td>
 <td>Specifies the availability of the equipment under normal operating conditions</td>
 </tr>
 <tr>
-<td><a href="peakCurrent/">peakCurrent</a></td>
+<td><a href="peak_current/">peak_current</a></td>
 <td>Peak short-circuit current</td>
 </tr>
 <tr>
-<td><a href="qAtMaxLoadingSummer/">qAtMaxLoadingSummer</a></td>
+<td><a href="q_at_max_loading_summer/">q_at_max_loading_summer</a></td>
 <td>Reactive power at time of summer active power maximum loading</td>
 </tr>
 <tr>
-<td><a href="qAtMaxLoadingWinter/">qAtMaxLoadingWinter</a></td>
+<td><a href="q_at_max_loading_winter/">q_at_max_loading_winter</a></td>
 <td>Reactive power at time of winter active power maximum loading</td>
 </tr>
 <tr>
@@ -561,11 +525,11 @@ PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
 <td>The attribute is used for an exchange of a human readable short name with len...</td>
 </tr>
 <tr>
-<td><a href="symmetricalBreakingCurrent/">symmetricalBreakingCurrent</a></td>
+<td><a href="symmetrical_breaking_current/">symmetrical_breaking_current</a></td>
 <td>Symmetrical short-circuit breaking current</td>
 </tr>
 <tr>
-<td><a href="symmetricalBreakingCurrentAngle/">symmetricalBreakingCurrentAngle</a></td>
+<td><a href="symmetrical_breaking_current_angle/">symmetrical_breaking_current_angle</a></td>
 <td>Symmetrical short-circuit breaking current angle</td>
 </tr>
 <tr>

@@ -153,98 +153,78 @@ information, short circuit results, system capacities, and loadings.</p>
 <pre class="mermaid"><code>classDiagram
 
 class SummaryShortCircuitResult {
-    BusbarSection busBarSection
-    ShortCircuitFaultKind faultKind
-    CurrentFlow peakCurrent
-    CurrentFlow symmetricalBreakingCurrent
-    AngleDegrees symmetricalBreakingCurrentAngle
-    string aliasName
+    BusbarSection bus_bar_section
+    ShortCircuitFaultKind fault_kind
+    CurrentFlow peak_current
+    CurrentFlow symmetrical_breaking_current
+    AngleDegrees symmetrical_breaking_current_angle
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class FirmCapacity {
-    ActivePower firmCapacitySummer
-    ActivePower firmCapacityWinter
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower firm_capacity_summer
+    ActivePower firm_capacity_winter
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class MaximumLoading {
-    ActivePower maxLoadingSummer
-    ActivePower maxLoadingWinter
-    ReactivePower qAtMaxLoadingSummer
-    ReactivePower qAtMaxLoadingWinter
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower max_loading_summer
+    ActivePower max_loading_winter
+    ReactivePower q_at_max_loading_summer
+    ReactivePower q_at_max_loading_winter
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class PastYearConnectionActivity {
-    ActivePower generationBudgetEstimatesProvidedCapacity
-    integer generationBudgetEstimatesProvidedCount
-    ActivePower generationConnectionOffersAcceptedCapacity
-    integer generationConnectionOffersAcceptedCount
-    ActivePower generationConnectionOffersMadeCapacity
-    integer generationConnectionOffersMadeCount
-    ActivePower loadBudgetEstimatesProvidedCapacity
-    integer loadBudgetEstimatesProvidedCount
-    ActivePower loadConnectionOffersAcceptedCapacity
-    integer loadConnectionOffersAcceptedCount
-    ActivePower loadConnectionOffersMadeCapacity
-    integer loadConnectionOffersMadeCount
-    BusbarSection busBarSection
-    string aliasName
+    ActivePower generation_budget_estimates_provided_capacity
+    integer generation_budget_estimates_provided_count
+    ActivePower generation_connection_offers_accepted_capacity
+    integer generation_connection_offers_accepted_count
+    ActivePower generation_connection_offers_made_capacity
+    integer generation_connection_offers_made_count
+    ActivePower load_budget_estimates_provided_capacity
+    integer load_budget_estimates_provided_count
+    ActivePower load_connection_offers_accepted_capacity
+    integer load_connection_offers_accepted_count
+    ActivePower load_connection_offers_made_capacity
+    integer load_connection_offers_made_count
+    BusbarSection bus_bar_section
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 class BusbarSection {
     boolean aggregate
     boolean normally_in_service
-    string aliasName
     string description
-    string energyIdentCodeEic
-    string europeanArticleNumberEAN
-    string mRID
-    Name Names
     string energy_ident_code_eic
     string european_article_number_ean
     string m_rid
+    Name names
     string short_name
 }
 
-SummaryShortCircuitResult --&gt; BusbarSection : busBarSection
-FirmCapacity --&gt; BusbarSection : busBarSection
-MaximumLoading --&gt; BusbarSection : busBarSection
-PastYearConnectionActivity --&gt; BusbarSection : busBarSection</code></pre>
+SummaryShortCircuitResult --&gt; BusbarSection : bus_bar_section
+FirmCapacity --&gt; BusbarSection : bus_bar_section
+MaximumLoading --&gt; BusbarSection : bus_bar_section
+PastYearConnectionActivity --&gt; BusbarSection : bus_bar_section</code></pre>
 <p>URI: http://data.netbeheernederland.nl/im-e-system-capacity/version#1.0.0</p>
 </article>
 </div>
